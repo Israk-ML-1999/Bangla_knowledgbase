@@ -163,4 +163,5 @@ Key libraries used in this project:
 - For best results, ensure your PDF is high quality and text-based.
 
 ## Author
-- Adapted for your requirements by AI assistant 
+- Adapted for your requirements by AI assistant
+![image alt](https://github.com/Israk-ML-1999/Bangla_knowledgbase/blob/f90f1a1caaefc6f390ca968388be727cd5f46caa/Screenshot%202025-07-26%20222045.png raw=true)
