@@ -23,4 +23,4 @@ class Retriever:
             List of relevant text chunks
         """
         docs = self.vectorstore.similarity_search(query, k=top_k)
-        return [doc.page_content for doc in docs] 
+        return [doc.page_content for doc in docs]  

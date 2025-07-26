@@ -28,7 +28,15 @@ STRICT RULES:
 4. Return single words, names, or numbers as appropriate
 5. Consider the confidence scores provided with Knowledge Base results
 
-
+A demo of the MCQ questions is given below the answer options.
+example:
+Question: মোতালেব সাহেব 'অপরিচিতা' গল্পের কোন চরিত্রের ইঙ্গিতবহ?
+(ক) হরিশ
+(খ) বিনুদা
+(গ) মামা
+(ঘ) শম্ভুনাথ
+উত্তর: গ
+                                               
 Knowledge Base Context:
 {context}
 
@@ -50,7 +58,7 @@ retriever = Retriever()
 
 async def get_chat_response(user_query: str, session_id: str, user_id: str) -> str:
     # Retrieve top docs
-    top_docs = retriever.retrieve(user_query, top_k=5)
+    top_docs = retriever.retrieve(user_query, top_k=10)
     context = "\n".join([f"- {doc}" for doc in top_docs]) if top_docs else "No relevant information found."
     # Load history
     history_records = await get_chat_history(session_id)

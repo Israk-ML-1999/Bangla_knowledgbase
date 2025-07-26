@@ -1,4 +1,5 @@
 import os
+import re
 import json
 from datetime import datetime
 import time
@@ -34,7 +35,12 @@ os.makedirs(VECTOR_DIR, exist_ok=True)
 def clean_text_file(path):
     with open(path, encoding='utf-8') as f:
         lines = f.readlines()
-    cleaned = [line.strip() for line in lines if line.strip() and line.strip() not in UNWANTED_PHRASES]
+    cleaned = []
+    for line in lines:
+        line = line.strip()
+        line = re.sub(r'\s+', ' ', line)  # Normalize multiple spaces
+        if line and line not in UNWANTED_PHRASES:
+            cleaned.append(line)
     return '\n'.join(cleaned)
 
 def build_vector_store():

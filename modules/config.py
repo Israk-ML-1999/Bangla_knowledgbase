@@ -16,11 +16,11 @@ EMBED_MODEL = os.getenv('EMBED_MODEL', 'sentence-transformers/paraphrase-multili
 
 # OpenAI API
 OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
-OPENAI_MODEL = os.getenv('OPENAI_MODEL', 'gpt-3.5-turbo')  # Available models: gpt-4, gpt-3.5-turbo
+OPENAI_MODEL = os.getenv('OPENAI_MODEL', 'gpt-4')  # Available models: gpt-4, gpt-3.5-turbo
 
 # Chunking
-CHUNK_SIZE = int(os.getenv('CHUNK_SIZE', 512))
-CHUNK_OVERLAP = int(os.getenv('CHUNK_OVERLAP', 128))
+CHUNK_SIZE = int(os.getenv('CHUNK_SIZE', 500))
+CHUNK_OVERLAP = int(os.getenv('CHUNK_OVERLAP', 200))
 
 # Short-term memory
 SHORT_TERM_HISTORY = int(os.getenv('SHORT_TERM_HISTORY', 25)) 

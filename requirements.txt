@@ -4,7 +4,6 @@ openai
 python-dotenv
 sentence-transformers
 faiss-cpu
-PyPDF2
 pandas
 python-multipart 
 langchain 
