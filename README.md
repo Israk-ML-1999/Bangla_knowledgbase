@@ -151,6 +151,20 @@ Key libraries used in this project:
 - Monitor OpenAI API usage through their dashboard
 │   ├── kb_index.faiss       # FAISS index
 │   └── index.pkl      # Chunk metadata
+
+## Input
+'{
+  "query": "অনুপমের ভাষায় সুপুরুষ কাকে বলা হয়েছে ?",
+  "session_id": "string",
+  "user_id": "anonymous"
+}'
+
+## Output
+{
+  "answer": "শম্ভুনাথ",
+  "session_id": "string"
+}
+
 ```
 
 ## Usage
@@ -167,16 +181,5 @@ Key libraries used in this project:
 
 <img width="1135" height="904" alt="Image" src="https://github.com/user-attachments/assets/8811e6d6-6662-4d19-817d-d114302a932e" />
 
-## Input
-'{
-  "query": "অনুপমের ভাষায় সুপুরুষ কাকে বলা হয়েছে ?",
-  "session_id": "string",
-  "user_id": "anonymous"
-}'
 
-## Output
-{
-  "answer": "শম্ভুনাথ",
-  "session_id": "string"
-}
 
