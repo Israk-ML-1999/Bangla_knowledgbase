@@ -164,4 +164,5 @@ Key libraries used in this project:
 
 ## Author
 - Adapted for your requirements by AI assistant
+
 <img width="1135" height="904" alt="Image" src="https://github.com/user-attachments/assets/8811e6d6-6662-4d19-817d-d114302a932e" />
