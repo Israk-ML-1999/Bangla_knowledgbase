@@ -164,4 +164,4 @@ Key libraries used in this project:
 
 ## Author
 - Adapted for your requirements by AI assistant
-![image alt](https://github.com/Israk-ML-1999/Bangla_knowledgbase/blob/f90f1a1caaefc6f390ca968388be727cd5f46caa/Screenshot%202025-07-26%20222045.png raw=true)
+<img width="1135" height="904" alt="Image" src="https://github.com/user-attachments/assets/8811e6d6-6662-4d19-817d-d114302a932e" />
