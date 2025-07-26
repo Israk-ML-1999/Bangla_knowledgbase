@@ -153,17 +153,13 @@ Key libraries used in this project:
 │   └── index.pkl      # Chunk metadata
 
 ## Input
-'{
   "query": "অনুপমের ভাষায় সুপুরুষ কাকে বলা হয়েছে ?",
   "session_id": "string",
   "user_id": "anonymous"
-}'
 
 ## Output
-{
   "answer": "শম্ভুনাথ",
   "session_id": "string"
-}
 
 ```
 
