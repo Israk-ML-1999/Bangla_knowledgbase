@@ -18,9 +18,7 @@ build/
 # VS Code settings
 .vscode/
 
-# Project specific
-vector_store/
-chat_data.json
+
 
 # Jupyter Notebook
 .ipynb_checkpoints
@@ -44,8 +42,8 @@ logs/
 # Large data files
 data/*.txt
 data/*.pdf
-*.faiss
-*.pkl
+
+
 
 # IDE specific files
 .idea/

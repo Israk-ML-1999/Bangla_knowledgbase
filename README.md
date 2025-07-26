@@ -2,6 +2,8 @@
 
 A sophisticated Retrieval-Augmented Generation (RAG) chatbot that answers questions in both Bangla and English with high accuracy and confidence scoring.
 
+"But this PDF is not digital text, so OCR or PDF extraction models cannot properly extract the text."
+
 ## Features
 
 - **Bilingual Support**: Handles both Bangla and English queries
@@ -20,15 +22,17 @@ A sophisticated Retrieval-Augmented Generation (RAG) chatbot that answers questi
 
 1. **Vector Store (FAISS)**
    - Uses HuggingFace embeddings (paraphrase-multilingual-MiniLM-L12-v2)
-   - Chunk size: 512 tokens
-   - Chunk overlap: 128 tokens
+   - Chunk size: 500 tokens
+   - Chunk overlap: 200 tokens
    - Efficient similarity search
 
 2. **Chat Engine**
-   - Model: GPT-3.5 Turbo (configurable to GPT-4)
+   - Model: GPT-40 Turbo (configurable to GPT-4)
    - Response format includes confidence scores
    - Maintains conversation context
    - Short-term memory management
+   - long-term memory management
+
 
 3. **API Endpoints**
    - POST `/chat`: Main chat endpoint
@@ -41,10 +45,7 @@ A sophisticated Retrieval-Augmented Generation (RAG) chatbot that answers questi
 {
   "answer": "Response text",
   "session_id": "unique_session_id",
-  "cosine_similarity": {
-    "score": 0.923,
-    "top_chunk": "Most relevant source text"
-  }
+  "user_id":"Unique"
 }
 ```
 
@@ -53,7 +54,7 @@ A sophisticated Retrieval-Augmented Generation (RAG) chatbot that answers questi
 1. **Environment Setup**
    ```bash
    python -m venv env
-   source env/bin/activate  # On Windows: env\Scripts\activate
+   source env/bin/activate // Windows: env\Scripts\activate
    pip install -r requirements.txt
    ```
 
@@ -80,7 +81,7 @@ A sophisticated Retrieval-Augmented Generation (RAG) chatbot that answers questi
 
 5. **Access API**
    - Swagger UI: [http://localhost:8000/docs](http://localhost:8000/docs)
-   - ReDoc: [http://localhost:8000/redoc](http://localhost:8000/redoc)
+   
 
 ## Project Structure
 ```
@@ -95,7 +96,7 @@ A sophisticated Retrieval-Augmented Generation (RAG) chatbot that answers questi
 │   ├── config.py          # Configuration settings
 │   ├── pdf_index_builder.py # Vector store builder
 │   ├── retriever.py       # FAISS retrieval logic
-│   └── web_search.py      # Web search integration
+│   
 ├── data/                  # Data storage
 │   └── New_10m.txt        # Source text data
 └── vector_store/         # FAISS index storage
@@ -123,10 +124,7 @@ curl -X POST "http://localhost:8000/chat" \
 {
   "answer": "১৯৪৬",
   "session_id": "abc123",
-  "cosine_similarity": {
-    "score": 0.923,
-    "top_chunk": "১৯৪৬ সালে বাংলা একাডেমি প্রতিষ্ঠিত হয়।"
-  }
+
 }
 ```
 
@@ -152,12 +150,12 @@ Key libraries used in this project:
 - Configure chunk size and overlap based on your content needs
 - Monitor OpenAI API usage through their dashboard
 │   ├── kb_index.faiss       # FAISS index
-│   └── kb_metadata.pkl      # Chunk metadata
+│   └── index.pkl      # Chunk metadata
 ```
 
 ## Usage
 - Use the `/chat` endpoint in Swagger UI to ask questions in Bangla or English.
-- The system will return only the answer (no explanation), based on the PDF content.
+- The system will return only the answer (no explanation), based on the PDF content and User History .
 
 ## Notes
 - Only digital text and tables are used; images/graphics are ignored.
