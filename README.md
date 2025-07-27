@@ -8,14 +8,13 @@ A sophisticated Retrieval-Augmented Generation (RAG) chatbot that answers questi
 
 - **Bilingual Support**: Handles both Bangla and English queries
 - **RAG System**: Uses FAISS for efficient vector similarity search
-- **Confidence Scoring**: Returns cosine similarity scores with responses
+- **Confidence Scoring**: Returns cosine similarity with responses
 - **Session Management**: Maintains conversation history
 - **FastAPI Backend**: High-performance async API with Swagger UI
 - **PDF/Text Processing**: Handles PDF and text documents efficiently
 - **Multilingual Embeddings**: Uses `sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2`
 - **Configurable**: Easy to customize through environment variables
-- **Smart Response Format**: Returns answers with confidence scores and relevant source chunks
-
+- **Smart Response Format**
 ## Technical Details
 
 ### Components
@@ -31,7 +30,7 @@ A sophisticated Retrieval-Augmented Generation (RAG) chatbot that answers questi
    - Response format includes confidence scores
    - Maintains conversation context
    - Short-term memory management
-   - long-term memory management
+   - long-term memory management user history 
 
 
 3. **API Endpoints**
@@ -64,9 +63,9 @@ A sophisticated Retrieval-Augmented Generation (RAG) chatbot that answers questi
    OPENAI_API_KEY=your_api_key
    DATA_PATH=data/New_10m.txt
    VECTOR_DIR=vector_store
-   OPENAI_MODEL=gpt-3.5-turbo
-   CHUNK_SIZE=512
-   CHUNK_OVERLAP=128
+   OPENAI_MODEL=gpt-4o
+   CHUNK_SIZE=500
+   CHUNK_OVERLAP=200
    ```
 
 3. **Build Vector Store**
@@ -80,7 +79,7 @@ A sophisticated Retrieval-Augmented Generation (RAG) chatbot that answers questi
    ```
 
 5. **Access API**
-   - Swagger UI: [http://localhost:8000/docs](http://localhost:8000/docs)
+   - Swagger UI: (http://localhost:8000/docs)
    
 
 ## Project Structure
@@ -144,13 +143,13 @@ Key libraries used in this project:
 ## Notes
 
 - The system uses cosine similarity scores to measure confidence in responses
-- Higher similarity scores (closer to 1.0) indicate more reliable answers
 - Session management allows for maintaining conversation context
 - The vector store is built using multilingual embeddings for better Bangla support
 - Configure chunk size and overlap based on your content needs
 - Monitor OpenAI API usage through their dashboard
 │   ├── kb_index.faiss       # FAISS index
 │   └── index.pkl      # Chunk metadata
+
 
 ## Input
 ```
@@ -172,7 +171,7 @@ Key libraries used in this project:
 
 ## Usage
 - Use the `/chat` endpoint in Swagger UI to ask questions in Bangla or English.
-- The system will return only the answer (no explanation), based on the PDF content and User History .
+- The system will return only the answer (no explanation), based on the PDF content and User History.
 
 ## Notes
 - Only digital text and tables are used; images/graphics are ignored.
@@ -183,6 +182,12 @@ Key libraries used in this project:
 - Adapted for your requirements by AI assistant
 
 <img width="1135" height="904" alt="Image" src="https://github.com/user-attachments/assets/8811e6d6-6662-4d19-817d-d114302a932e" />
-
-
+```
+## Improvement Details
+- Text Extraction Methods and Challenges it can improve 
+- Meaningful Sentence and  Query Handling, (Saints and colloquial language)
+- We can perform hybrid search using both keyword and semantic similarity.
+- improve data preprocassing with bangla embading model (custom model)
+- chunk size up & down, structure data, use matadata and FAISS, Build custom retriever.
+```
 
